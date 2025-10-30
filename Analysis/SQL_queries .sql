@@ -1,3 +1,62 @@
+----EDA
+---base table
+---userid,channel2,recorddate2,duration2 
+  select * from workspace.tv.viewership;
+---checking data type
+  describe  workspace.tv.viewership;
+
+----checking duplicates
+select count(*) as `row count`--10000
+, count(distinct userid) as `total customer`,
+UserID---4386
+from workspace.tv.viewership
+group by userid
+having `row count`> 1
+order by `row count` desc ;--have duplicates
+---count total channel
+select count(distinct Channel2)as `total channels`
+,
+date_format(recorddate2_new, 'MMMM') AS Month_name---21
+from workspace.tv.viewership
+group by month_name
+;
+
+---null value
+select `Recorddate2_new`, `Channel2`, `Duration 2`
+from workspace.tv.viewership
+where `channel2` IS NULL
+  OR `Recorddate2_new` IS NULL
+  OR  `Duration 2` IS NULL;---no null value
+
+`Recorddate2_new`, `Channel2`, `Duration 2` ;
+
+---------------------------------------------------------------- 
+-----second table
+---userid,gender,age,race,province
+select *
+from workspace.tv.profiles;
+
+----checking data type
+describe workspace.tv.profiles;
+
+---checking null value
+ select userid,gender,age,race,province
+ from workspace.tv.profiles
+ where userid is null or gender is null or age is null or race is null or province is null;----no null
+
+----checking duplicates
+
+select count(*) as `row count`,
+     ----  count (distinct userid) as customer 
+       userid
+       from workspace.tv.profiles
+       group by `userid`
+       having count(*)>1;
+
+---checking gender column
+select distinct gender 
+  from workspace.tv.profiles;
+
 with profile as(select 
     case 
         when gender is null or trim(gender) = '' or gender = 'None' then 'unknown'
