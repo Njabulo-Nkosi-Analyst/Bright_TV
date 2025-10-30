@@ -56,56 +56,77 @@ select count(*) as `row count`,
 ---checking gender column
 select distinct gender 
   from workspace.tv.profiles;
+---end here 
 
-with profile as(select 
+
+with profile as(select distinct
     case 
         when gender is null or trim(gender) = '' or gender = 'None' then 'unknown'
         else gender
     end as gender,
+
     case when race in ('other/none comined') then 'Unknown'
     when trim(race) ='' or race ='None' then 'unknown'
     else Race
     end as Race,
+
 case   when trim(Province) ='' or Province ='None' then 'unknown'    
 else Province
-end as Province,Age,a.UserID,Channel2,Recorddate2_new,`Duration 2`,
----date
-  date_format(recorddate2_new, 'yyyy-MM-dd') AS    Full_date,
+end as Province,
+
+Age,a.UserID,Channel2,
+Recorddate2_new,`Duration 2`
+
+from workspace.tv.viewership as a
+left join workspace.tv.profiles as b
+ on a.UserID = b.UserID) 
+
+SELECT gender,race,CHANNEL2,PROVINCE,AGE,USERID,recorddate2_new,`Duration 2`,
+      date_format(recorddate2_new, 'yyyy-MM-dd') AS Full_date,
       date_format(recorddate2_new, 'MMMM') AS Month_name,
       date_format(recorddate2_new, 'MM-yyyy') AS Month_id,
       date_format(recorddate2_new, 'EEEE') AS Weekday,
       date_format(recorddate2_new, 'HH:mm') AS TIME,
       date_format(`duration 2`, 'HH:mm') AS DURATION,
----CASE STATEMENT(TIME)
- case 
-     when TIME between '06:00'and'11:59' then 'Morning_06:00-11:59' 
-     when  TIME between '12:00'and'16:59' then 'Afternoon_12:00-16:59'
-     when  TIME between '17:00'and'21:59' then 'Evening_17:00-21:59'
-     else 'Night_22:00-05:59'
-     end as Time_Group,
----CASE STATEMENT(DURATION)     
-case 
-    when DURATION  between '00:00'and '00:14' then 'Short_View_00:00-00:14'
-    when DURATION between '00:15' and'00:59' then 'Standard_View_00:15-00:59'
-    when DURATION between '01:00' and '02:59' then 'Engaged_View_01:00-02:59'
-    else 'Marathon_view_03:00-11:59'
-    end as Duration_Group,
-    case 
-    when age between 0 and 12 then 'Children_0-12'
-    when age between 13 and 19 then 'Teen_13-19'
-    when age between 20 and 39 then  'Young_Adults_20-39'     
-    when age between 40 and 59 then 'Middle_Aged_Adults_40-59'
-    else 'Seniors_60+' 
-    end as Age_basket 
-from workspace.tv.viewership as a
-left join workspace.tv.profiles as b
-on a.userid = b.userid
- ) select  *, COUNT(userid) AS Total_viewership,
-    COUNT(DISTINCT userid) AS total_customers, 
-    COUNT(channel2) AS total_channel,
-    COUNT(distinct channel2) AS total_channels,
-     ROUND(AVG(AGE),0) AS AVERAGE_AGE 
-     from profile
-     group by gender,race,province,age,userid,channel2,Recorddate2_new,`Duration 2`,full_date,month_id,month_name,
-     weekday,time,duration,time_group,duration_group,age_basket
+
+    -- Duration Group
+    CASE
+        WHEN `Duration 2` BETWEEN '00:00' AND '00:14' THEN 'Short_View_00:00-00:14'
+        WHEN `Duration 2` BETWEEN '00:15' AND '00:59' THEN 'Standard_View_00:15-00:59'
+        WHEN `Duration 2` BETWEEN '01:00' AND '02:59' THEN 'Engaged_View_01:00-02:59'
+        ELSE 'Marathon_View_03:00-11:59'
+    END AS Duration_Group,
+
+    -- Time of Day Group
+    CASE
+        WHEN date_format(recorddate2_new, 'HH:mm') BETWEEN '06:00' AND '11:59' THEN 'Morning_06:00-11:59'
+        WHEN date_format(recorddate2_new, 'HH:mm') BETWEEN '12:00' AND '16:59' THEN 'Afternoon_12:00-16:59'
+        WHEN date_format(recorddate2_new, 'HH:mm') BETWEEN '17:00' AND '21:59' THEN 'Evening_17:00-21:59'
+        ELSE 'Night_22:00-05:59'
+    END AS Time_Group,
+
+    -- Age Group
+    CASE
+        WHEN age BETWEEN 0 AND 12 THEN 'Children_0-12'
+        WHEN age BETWEEN 13 AND 19 THEN 'Teen_13-19'
+        WHEN age BETWEEN 20 AND 39 THEN 'Young_Adults_20-39'
+        WHEN age BETWEEN 40 AND 59 THEN 'Middle_Aged_Adults_40-59'
+        ELSE 'Seniors_60+'
+    END AS Age_Basket,
+
+    COUNT(userid) AS Total_Viewership,
+    COUNT(DISTINCT userid) AS Total_Customers,
+    COUNT(channel2) AS Total_Channel_Views,
+    COUNT(DISTINCT channel2) AS Total_Channels,
+    ROUND(AVG(age), 0) AS Average_Age
+
+FROM PROFILE
+
+GROUP BY 
+     Full_Date, Month_Name, Month_ID, Weekday, Time, Duration, 
+     Duration_Group, Time_Group, Age_Basket,gender,race,CHANNEL2,
+     PROVINCE,AGE,USERID,recorddate2_new,`Duration 2`
+
+ORDER BY
+      Month_ID, Full_Date, Time;
      ;
