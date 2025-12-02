@@ -49,3 +49,34 @@ This analysis is based on BrightTV's viewership data, focusing on performance, c
 - 🐘 **SQL** – for querying structured data and extracting insights    
 - 🎨 **Canva** – for designing and presenting the final presentation  
 - 📊 **Power BI** – for interactive dashboards
+
+  ##  🎥 How to View
+
+-**📝Project Description** - This File Shows The Objective And Aims Of The New CEO.- [>🔗 View Project Description](https://github.com/Njabulo-Nkosi-Analyst/Coffee-Shop-Sales-Analysis/commit/9f645d422670eb39631317ef64d5abee0b964b97)
+
+
+-🧠 **Miro Planning** - This includes project goals, KPIs, filters, and design planning
+[> 🔗View Miro Board](https://github.com/Njabulo-Nkosi-Analyst/Coffee-Shop-Sales-Analysis/commit/3a970fd81c9181099ae96758d3f5d104bf287605)
+
+
+-💻**SQL Code** - Includes all queries used for data transformation and insights.
+[> 🔗 View SQL Scripts](https://github.com/Njabulo-Nkosi-Analyst/Coffee-Shop-Sales-Analysis/commit/a29c78c94581465e8c427c77aa5f0d9e2d2007e1)
+
+
+-💻**EXCEL Pivot Table** - Includes all pivot and Graphs.
+[> 🔗 View Pivot table](https://github.com/Njabulo-Nkosi-Analyst/Coffee-Shop-Sales-Analysis/commit/a29c78c94581465e8c427c77aa5f0d9e2d2007e1) 
+
+
+-**💡Full presentation** - is available in PDF format within this repository.- [>🔗View Presentation](https://github.com/Njabulo-Nkosi-Analyst/Coffee-Shop-Sales-Analysis/commit/da4f0e700986b4f4272f42b1c353c4f9c040e5ee)
+
+
+ -📊 **Dashboard Preview**- [>🔗 View Full Dashboard on Power BI (Public Link)](https://github.com/Njabulo-Nkosi-Analyst/Coffee-Shop-Sales-Analysis/commit/a7b0d01fe0c473d6d06fe5d2d211f071302b4aa6)
+
+
+
+
+## 📩 Contact
+
+Want to collaborate or have feedback?  
+📧 Email: Njabuloxnkosi12@gmail.com
+🔗 LinkedIn:(www.linkedin.com/in/njabulo-nkosi-949359325)
