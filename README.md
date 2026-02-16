@@ -50,27 +50,31 @@ This analysis is based on BrightTV's viewership data, focusing on performance, c
 - 🎨 **Canva** – for designing and presenting the final presentation  
 - 📊 **Power BI** – for interactive dashboards
 
-  ##  🎥 How to View
-
--**📝Project Description** - This File Shows The Objective And Aims Of The New CEO.- [>🔗 View Project Description](https://github.com/Njabulo-Nkosi-Analyst/Coffee-Shop-Sales-Analysis/commit/9f645d422670eb39631317ef64d5abee0b964b97)
-
-
--🧠 **Miro Planning** - This includes project goals, KPIs, filters, and design planning
-[> 🔗View Miro Board](https://github.com/Njabulo-Nkosi-Analyst/Coffee-Shop-Sales-Analysis/commit/3a970fd81c9181099ae96758d3f5d104bf287605)
-
+  
+##  🎥 How to View
 
 -💻**SQL Code** - Includes all queries used for data transformation and insights.
-[> 🔗 View SQL Scripts](https://github.com/Njabulo-Nkosi-Analyst/Coffee-Shop-Sales-Analysis/commit/a29c78c94581465e8c427c77aa5f0d9e2d2007e1)
+[> 🔗 View SQL Scripts](https://github.com/Njabulo-Nkosi-Analyst/Bright_TV/blob/main/Analysis/SQL_queries%20.sql)
 
 
--💻**EXCEL Pivot Table** - Includes all pivot and Graphs.
-[> 🔗 View Pivot table](https://github.com/Njabulo-Nkosi-Analyst/Coffee-Shop-Sales-Analysis/commit/a29c78c94581465e8c427c77aa5f0d9e2d2007e1) 
+-**📊Excel Pivot Table** - is available in PDF format within this repository.- [>🔗View Pivot Table](https://github.com/Njabulo-Nkosi-Analyst/Bright_TV/blob/main/Analysis/Excel_Pivot_Table.pdf)
 
+-**📽️Full presentation** - is available in PDF format within this repository.- [>🔗View Presentation](https://github.com/Njabulo-Nkosi-Analyst/Bright_TV/blob/main/Outputs/Bright%20tv%20Presentation.pdf)
 
--**💡Full presentation** - is available in PDF format within this repository.- [>🔗View Presentation](https://github.com/Njabulo-Nkosi-Analyst/Coffee-Shop-Sales-Analysis/commit/da4f0e700986b4f4272f42b1c353c4f9c040e5ee)
+ -🎨 **Dashboard Preview**- [>🔗 View Full Dashboard on Power BI](https://github.com/Njabulo-Nkosi-Analyst/Bright_TV/blob/main/Outputs/TV%20dashboard%20.pdf)
 
+-**🧹Uncleaned Data** - is available in CSV format within this repository(profile dataset).- [>🔗View Uncleaned Data](https://github.com/Njabulo-Nkosi-Analyst/Bright_TV/blob/main/Data/profiles.csv)
 
- -📊 **Dashboard Preview**- [>🔗 View Full Dashboard on Power BI (Public Link)](https://github.com/Njabulo-Nkosi-Analyst/Coffee-Shop-Sales-Analysis/commit/a7b0d01fe0c473d6d06fe5d2d211f071302b4aa6)
+-**🧹Uncleaned Data** - is available in CSV format within this repository(Viewership Dataset).- [>🔗View Uncleaned Data](https://github.com/Njabulo-Nkosi-Analyst/Bright_TV/blob/main/Data/viewership.csv)
+
+-**✨Cleaned Data** - is available in CSV format within this repository.- [>🔗View Cleaned Data](https://github.com/Njabulo-Nkosi-Analyst/Bright_TV/blob/main/Data/Tv%20Final%20data.csv)
+
+-**📝Project Description** - This File Shows The Objective And Aims Of The New CEO.- [>🔗 View Project Description](https://github.com/Njabulo-Nkosi-Analyst/Bright_TV/blob/main/Documentation/BrightTV%20Case%20Study.pdf)
+
+-**📅Gantt Charts** - is available in PDF format within this repository.- [>🔗View Gantt Charts](https://github.com/Njabulo-Nkosi-Analyst/Bright_TV/blob/main/Documentation/Gantt%20Charts.png)
+
+-🧠 **Miro Planning** - This includes project goals, KPIs, filters, and design planning
+[> 🔗View Miro Board](https://github.com/Njabulo-Nkosi-Analyst/Bright_TV/blob/main/Documentation/Methodology.jpg)
 
 
 
